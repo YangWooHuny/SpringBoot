@@ -6,7 +6,6 @@ buildscript{
         mavenCentral()
     }
 
-
     dependencies{
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -27,7 +26,14 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    /*lombok 사용*/
+    implementation('org.projectlombok:lombok:1.18.20')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-
+    testImplementation('org.projectlombok:lombok:1.18.20')
+    annotationProcessor('org.projectlombok:lombok:1.18.20')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.20')
+    /*jpa 사용*/
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
 }
 
